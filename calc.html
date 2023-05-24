@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        p {
+            color: white;
+            font-size: 50px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        body {
+            background-image: "20230212_122156.jpg";
+            background-color: #000000;
+            margin-top: 100px;
+        }
+
+        #op {
+            border: 3px solid rgb(0, 0, 0);
+            border-radius: 20px;
+            color: #fd4900;
+            height: 42px;
+            width: 31px;
+            padding: 20px;
+            background-color: rgb(255, 255, 255);
+        }
+
+        #clear {
+            width: 78px;
+            height: 87px;
+            border: 3px solid rgb(0, 0, 0);
+            color: #fd4900;
+            border-radius: 20px;
+            padding: 20px;
+            background-color: rgb(255, 255, 255);
+        }
+
+        #eq {
+            border-radius: 100px;
+            border: #fd4900;
+            color: rgb(255, 255, 255);
+            padding: 20px;
+            text-align: center;
+            width: 120px;
+            height: 42px;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 35px;
+            margin: 4px 2px;
+            cursor: pointer;
+            background-color: #fd4900;
+        }
+
+        /* center{
+            margin-top: ;
+        } */
+        #clear:hover {
+            font: bolder;
+            background-color: rgb(255, 255, 255);
+        }
+
+        .formstyle {
+            width: 300px;
+            height: 530px;
+            margin: auto;
+            border: 3px solid rgb(0, 0, 0);
+            border-radius: 5px;
+            padding: 18px;
+        }
+
+        input {
+            width: 20px;
+            background-color: rgb(255, 255, 255);
+            color: #000000;
+            border: 3px solid;
+            border-radius: 20px;
+            padding: 26px;
+            margin: 2px;
+            font-size: 25px;
+        }
+
+
+        #calc {
+            width: 290px;
+            height: 50px;
+            color: rgb(0, 0, 0);
+            background-color: rgb(255, 255, 255);
+            border-radius: 20px;
+            padding: 20px;
+            margin: auto;
+        }
+
+        #clockContainer {
+            position: relative;
+            margin: auto;
+            height: 220px;
+            /*to make the height and width responsive*/
+            width: 220px;
+            background: url(https://media.geeksforgeeks.org/wp-content/uploads/20210302161254/imgonlinecomuaCompressToSizeOmNATjUMFKw-300x300.jpg) no-repeat;
+            /*setting our background image*/
+            background-size: 100%;
+            border-radius: 50%;
+            border-color: #fd4900;
+        }
+
+        #hour,
+        #minute,
+        #second {
+            position: absolute;
+            background: rgb(0, 0, 0);
+            border-radius: 10px;
+            transform-origin: bottom;
+        }
+
+        #hour {
+            width: 1.8%;
+            height: 25%;
+            top: 25%;
+            left: 48.85%;
+            opacity: 0.8;
+        }
+
+        #minute {
+            width: 1.6%;
+            height: 30%;
+            top: 19%;
+            left: 48.9%;
+            opacity: 0.8;
+        }
+
+        #second {
+            width: 1%;
+            height: 40%;
+            top: 9%;
+            left: 49.25%;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div id="clockContainer">
+        <div id="hour"></div>
+        <div id="minute"></div>
+        <div id="second"></div>
+    </div> -->
+    <center>
+        <p>Calculator</p>
+        <form name="Calculator">
+            <input type="text" name="expr" id="calc"><br>
+            <input type="button" value="AC" onclick="Calculator.expr.value = ' ' " id="clear">
+            <input type="button" value="&#9003" onclick="Calculator.expr.value = Calculator.expr.value.slice(0,-1) "id="clear">
+            <input type="button " name="%" value="%" onclick=" calc15()" id="op">
+            <input type="button " name="/ " value="/ " onclick="calc13() " id="op"><br>
+            <input type="button " name="7 " value="7 " onclick="calc7() ">
+            <input type="button " name="8 " value="8 " onclick="calc8() ">
+            <input type="button " name="9 " value="9 " onclick="calc9() ">
+            <input type="button " name="* " value="* " onclick="calc12() " id="op"><br>
+            <input type="button " name="4 " value="4 " onclick="calc4() ">
+            <input type="button " name="5 " value="5 " onclick="calc5() ">
+            <input type="button " name="6 " value="6 " onclick="calc6() ">
+            <input type="button " name="- " value="- " onclick="calc11() " id="op"><br>
+            <input type="button " name="1" value="1" onclick=" calc1()">
+            <input type="button " name="2 " value="2 " onclick="calc2() ">
+            <input type="button " name="3 " value="3 " onclick="calc3() ">
+            <input type="button " name="+ " value="+ " onclick="calc10() " id="op"><br>
+            <input type="button " name="0 " value="0 " onclick="calc0() ">
+            <input type="button " name=". " value=". " onclick="calc14() ">
+            <input type="button " name="=" value="=" onclick=" Calc() " id="eq"><br>
+        </form>
+    </center>
+
+    <script>
+        function calc1() {
+            document.Calculator.expr.value += '1';
+        }
+
+        function calc2() {
+            document.Calculator.expr.value += '2';
+        }
+
+        function calc3() {
+            document.Calculator.expr.value += '3';
+        }
+
+        function calc4() {
+            document.Calculator.expr.value += '4';
+        }
+
+        function calc5() {
+            document.Calculator.expr.value += '5';
+        }
+
+        function calc6() {
+            document.Calculator.expr.value += '6';
+        }
+
+        function calc7() {
+            document.Calculator.expr.value += '7';
+        }
+
+        function calc8() {
+            document.Calculator.expr.value += '8';
+        }
+
+        function calc9() {
+            document.Calculator.expr.value += '9';
+        }
+
+        function calc0() {
+            document.Calculator.expr.value += '0';
+        }
+
+        function calc10() {
+            document.Calculator.expr.value += '+';
+        }
+
+        function calc11() {
+            document.Calculator.expr.value += '-';
+        }
+
+        function calc12() {
+            document.Calculator.expr.value += '*';
+        }
+
+        function calc13() {
+            document.Calculator.expr.value += '/';
+        }
+
+        function calc14() {
+            document.Calculator.expr.value += '.';
+        }
+        function calc15() {
+            document.Calculator.expr.value += '%';
+        }
+
+        function Calc() {
+            document.Calculator.expr.value = eval(document.Calculator.expr.value);
+        }
+
+
+    </script>
+    <!-- <br><br><br><br><br>
+    <br><br><br><br><br>
+    <center><img src="20230212_122156.jpg" alt="" width="1400" height="2000"></center> -->
+    
+</body>
+
+</html>
