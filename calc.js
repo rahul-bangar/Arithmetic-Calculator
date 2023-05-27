@@ -1,80 +1,31 @@
-function calc1() {
-  document.Calculator.expr.value += "1";
+function appendText(text) {
+  var currentText = Calculator.expr.value;
+
+  // Remove the initial '0' if it exists
+  if (currentText === '0') {
+    Calculator.expr.value = '';
+  }
+  Calculator.expr.value += text;
+  
 }
 
-function calc2() {
-  document.Calculator.expr.value += "2";
+function calculate() {
+  var result = eval(Calculator.expr.value);
+  Calculator.expr.value = result;
 }
 
-function calc3() {
-  document.Calculator.expr.value += "3";
+function clearInput() {
+  Calculator.expr.value = '0';
 }
 
-function calc4() {
-  document.Calculator.expr.value += "4";
-}
+function deleteLastCharacter() {
+  var currentText = Calculator.expr.value;
+  var newText = currentText.slice(0, -1);
 
-function calc5() {
-  document.Calculator.expr.value += "5";
+  // Display '0' if the input is empty after deleting the last character
+  if (newText === '') {
+    Calculator.expr.value = '0';
+  } else {
+    Calculator.expr.value = newText;
+  }
 }
-
-function calc6() {
-  document.Calculator.expr.value += "6";
-}
-
-function calc7() {
-  document.Calculator.expr.value += "7";
-}
-
-function calc8() {
-  document.Calculator.expr.value += "8";
-}
-
-function calc9() {
-  document.Calculator.expr.value += "9";
-}
-
-function calc0() {
-  document.Calculator.expr.value += "0";
-}
-
-function calc10() {
-  document.Calculator.expr.value += "+";
-}
-
-function calc11() {
-  document.Calculator.expr.value += "-";
-}
-
-function calc12() {
-  document.Calculator.expr.value += "*";
-}
-
-function calc13() {
-  document.Calculator.expr.value += "/";
-}
-
-function calc14() {
-  document.Calculator.expr.value += ".";
-}
-function calc15() {
-  document.Calculator.expr.value += "%";
-}
-
-function Calc() {
-  document.Calculator.expr.value = eval(document.Calculator.expr.value);
-}
-
-setInterval(() => {
-  d = new Date(); //object of date()
-  hr = d.getHours();
-  min = d.getMinutes();
-  sec = d.getSeconds();
-  hr_rotation = 30 * hr + min / 2; //converting current time
-  min_rotation = 6 * min;
-  sec_rotation = 6 * sec;
-
-  hour.style.transform = `rotate(${hr_rotation}deg)`;
-  minute.style.transform = `rotate(${min_rotation}deg)`;
-  second.style.transform = `rotate(${sec_rotation}deg)`;
-}, 1000);
